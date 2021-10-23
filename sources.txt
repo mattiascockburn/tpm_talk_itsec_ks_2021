@@ -1,0 +1,10 @@
+* UEFI Secure Boot Impact on Linux (Canonical/Red Hat) -- https://ozlabs.org/docs/uefi-secure-boot-impact-on-linux.pdf
+* Wikipedia: Trusted Platform Module -- https://en.wikipedia.org/wiki/Trusted_Platform_Module
+* TPM (Trusted Platform Module) - Computerphile -- https://www.youtube.com/watch?v=RW2zHvVO09g
+* The Strange State of Authenticated Boot and Disk Encryption on Generic Linux Distributions -- http://0pointer.net/blog/authenticated-boot-and-disk-encryption-on-linux.html
+* Using the TPM - It's Not Rocket Science (Anymore) - Johannes Holland & Peter Huewe -- https://www.youtube.com/watch?v=XwaSyHJIos8
+* IBM's Software TPM 2.0 -- https://sourceforge.net/projects/ibmswtpm2/
+* Secure Boot Overview (Windows 8, Microsoft) -- https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-8.1-and-8/hh824987(v=win.10)?redirectedfrom=MSDN
+* "TPM based attestation - how can we use it for good?" - Matthew Garrett (LCA 2020) -- https://www.youtube.com/watch?v=FobfM9S9xSI
+* 36C3 - Hacking (with) a TPM -https://www.youtube.com/watch?v=NFQ22SBlejk
+* Archlinux Wiki - TPM -- https://wiki.archlinux.org/title/Trusted_Platform_Module

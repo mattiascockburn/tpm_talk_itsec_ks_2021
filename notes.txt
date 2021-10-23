@@ -1,0 +1,35 @@
+# TPM Foo
+
+## Intro
+
+### Why bother? What's the point?
+
+### Some history
+
+TCG
+
+TPM 1.2 only allows SHA1, TPM 2 allows more algorithms
+
+## Main components
+
+### Endorsement Key
+
+written by Manufacturer (Infineon)
+
+### EK Certificate
+
+signed by Manufacturer
+
+### Secure storage
+
+### PCRs
+
+PCR7 for everything? Reduces fragility
+
+## How to use it
+
+### With openssl - tpm2-tss-engine
+
+### PKCS#11 - tpm2-pkcs11
+
+
