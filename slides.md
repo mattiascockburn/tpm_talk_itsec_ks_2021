@@ -1,4 +1,4 @@
-## Trusted Platform Module Foobar
+## Trusted Platform Module Foobar 💾
 
 Mattias Giese @ IT Sec Meetup Kassel Oktober 2021
 
@@ -7,22 +7,39 @@ Mattias Giese @ IT Sec Meetup Kassel Oktober 2021
 ## Warum?
 
 * Windows 11 will es haben.
-* Man kann lustige Sachen damit anstellen.
+* Man kann lustige Sachen damit anstellen. 🙃
 
 
 
 ## TPM - Für was ist das gut? 🤔
 
 
-## Bereitstellung kryptografischer Routinen
+### Bereitstellung kryptografischer Routinen
 
 * Zufallszahlengenerator
-*
-## Verifizierung des Systemzustandes
+* Generator für private Schlüssel (RSA, AES, ECC und andere Akronyme)
+* Hash-Generator (SHA-1, SHA-256)
 
 
+### Verifizierung des Systemzustandes
 
-## Sicheres speichern von Daten
+für "Measured Boot" und (Remote-)Attestion
+
+
+### Sicheres speichern von Daten
+
+* Speichern von beliebigen™ Inhalten
+* Herausgabe von Infos nur wenn System verifiziert ist
+
+
+### Ein wenig Geschichte
+
+* Trusted Computing Platform Alliance -> Trusted Computing Group (ab 2003)
+* Grundidee: HW Vendors können entscheiden, welche Software auf der Hardware läuft
+* Kritik: Vendor-Lockin, DRM (Remote-Attestation Horror)
+* In 2009: Veröffentlichung von ISO Standards
+* Ab 2014: TPM 2.0, da real TPM
+* Größte Errungenschaft: TPM Specs 1.2 und 2.0
 
 
 
@@ -49,3 +66,32 @@ Mattias Giese @ IT Sec Meetup Kassel Oktober 2021
   <img src="img/rpi4_tpm_2.jpg" height="350">
 </p>
 
+
+
+### Andere Varianten
+
+Neben dedizierten Chips gibt es noch andere Varianten bei der Implementierung des TPM.
+
+
+### Integriert in andere Chips
+
+Manche Intel Chipsets bringen ein TPM mit.
+
+
+### Firmware TPM
+
+Läuft in einem besonders gesicherten Bereich der CPU, Teil der UEFI Firmware
+
+
+### Hypervisor TPM
+
+z.B. in qemu/KVM, Hyper-V, VMWare
+
+
+### Software TPM
+
+z.B. swtpm: https://github.com/stefanberger/swtpm (auch qemu/KVM)
+
+
+
+### Intro
