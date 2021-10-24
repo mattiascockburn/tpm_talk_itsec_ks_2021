@@ -9,6 +9,7 @@
 TCG
 
 TPM 1.2 only allows SHA1, TPM 2 allows more algorithms
+TPM2 since 2014, not backwards-compatible
 
 ## Main components
 
@@ -26,10 +27,21 @@ signed by Manufacturer
 
 PCR7 for everything? Reduces fragility
 
+#### Get PCR contents
+
+```
+$ cat /sys/class/tpm/tpm0/pcr-sha1/*
+```
+
 ## How to use it
 
 ### With openssl - tpm2-tss-engine
 
 ### PKCS#11 - tpm2-pkcs11
 
+#### Reset TPM
 
+
+```
+echo 5 > /sys/class/tpm/tpm0/ppi/request
+```
