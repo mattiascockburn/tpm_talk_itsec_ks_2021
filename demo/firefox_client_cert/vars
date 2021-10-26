@@ -1,0 +1,26 @@
+# Slot ID in the TPM to use
+PID=1
+# Key label for TPM utilities
+LABEL='itsecdemo'
+# Security Officer PIN, used for some rare admin tasks
+SOPIN=13371337
+# Default User PIN used for accessing the PKCS11 token
+USERPIN=232323
+# The cypher to use, highly depends on the specification of the CHIP! rsa2048 is the common
+# denominator for now
+CYPHER=rsa2048
+
+BASE=$(realpath $(dirname $0))
+CA="${BASE}/../ca/snakeoil_ca.pem"
+CAKEY="${BASE}/../ca/snakeoil_ca.key"
+CSR="${BASE}/firefox_demo.csr"
+CRT="${BASE}/firefox_demo.crt"
+
+CERT_CN='John Doe'
+export TPM2_PKCS11_STORE="${HOME}/itsec_ks/pkcs11"
+
+PKCS11_TOOL='pkcs11-tool --module /usr/lib/pkcs11/libtpm2_pkcs11.so'
+export OPENSSL_CONF="$(dirname $0)/openssl.cnf"
+
+
+mkdir -pv "$TPM2_PKCS11_STORE"

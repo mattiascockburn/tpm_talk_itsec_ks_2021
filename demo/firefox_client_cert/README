@@ -1,0 +1,11 @@
+This demo is tested on Archlinux and needs the following stuff:
+
+* A working TPM chip
+* The following packages:
+  - opensc
+  - libp11
+  - tpm2-tools
+  - tpm2-pkcs11
+  - expect
+  - openssl
+

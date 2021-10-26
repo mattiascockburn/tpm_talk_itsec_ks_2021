@@ -1,0 +1,14 @@
+# Slot ID in the TPM to use
+PID=1
+# Key label for TPM utilities
+LABEL='sshdemo'
+# Security Officer PIN, used for some rare admin tasks
+SOPIN=13371337
+# Default User PIN used for accessing the PKCS11 token
+USERPIN=232323
+# The cypher to use, highly depends on the specification of the CHIP! rsa2048 is the common
+# denominator for now
+CYPHER=rsa2048
+
+export TPM2_PKCS11_STORE="${HOME}/itsec_ks/ssh_pkcs11"
+mkdir -pv "$TPM2_PKCS11_STORE"
