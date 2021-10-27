@@ -20,13 +20,24 @@ init = 0
 distinguished_name = req_dn
 string_mask = utf8only
 utf8 = yes
-basicConstraints = critical,CA:FALSE
 subjectKeyIdentifier = hash
-req_extensions = v3_req
 
-[ v3_req ]
+[ req_client ]
+nsCertType = client, email
+nsComment = "OpenSSL Generated Client Certificate"
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid,issuer
+keyUsage = critical, nonRepudiation, digitalSignature, keyEncipherment
+extendedKeyUsage = clientAuth, emailProtection
+
+[ req_server ]
+basicConstraints = CA:FALSE
+nsCertType = server
+nsComment = "OpenSSL Generated Server Certificate"
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid,issuer:always
 keyUsage = critical, digitalSignature, keyEncipherment
-extendedKeyUsage = critical, clientAuth
+extendedKeyUsage = serverAuth
 
 [ req_dn ]
 commonName = SnakeOil TPM Demo

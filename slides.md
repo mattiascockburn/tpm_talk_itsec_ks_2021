@@ -204,5 +204,3 @@ z.B. swtpm: https://github.com/stefanberger/swtpm (auch qemu/KVM)
 | 5             | MBR Config                                          |
 | 6             | State transitions/wake events                       |
 | 7             | Manufacturer specific (Secure Boot Status)          |
-
-

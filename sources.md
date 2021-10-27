@@ -28,6 +28,11 @@
 * Apple Secure Enclave -- https://support.apple.com/guide/security/secure-enclave-sec59b0b31ff/web
 
 
+## Quellen
+
+* BSI: TPM Provisioning -- https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Cyber-Sicherheit/SiSyPHus/Workpackage5b_TPM_Provisioning.pdf?__blob=publicationFile&v=1
+
+
 ## Software
 
 * Charra -- https://github.com/Fraunhofer-SIT/charra
@@ -35,6 +40,7 @@
 * TrustedGRUB2 -- https://github.com/Rohde-Schwarz/TrustedGRUB2
 * TPM2 Software -- https://github.com/tpm2-software
 * IBM's Software TPM 2.0 -- https://sourceforge.net/projects/ibmswtpm2/
+* Keylime -- https://keylime.dev/
 
 
 ## Bilder

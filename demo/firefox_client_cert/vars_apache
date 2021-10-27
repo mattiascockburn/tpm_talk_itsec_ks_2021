@@ -11,16 +11,11 @@ USERPIN=232323
 CYPHER=rsa2048
 
 BASE=$(realpath $(dirname $0))
-CA="${BASE}/../ca/snakeoil_ca.pem"
-CAKEY="${BASE}/../ca/snakeoil_ca.key"
-CSR="${BASE}/firefox_demo.csr"
-CRT="${BASE}/firefox_demo.crt"
 
-CERT_CN='John Doe'
-export TPM2_PKCS11_STORE="${HOME}/itsec_ks/pkcs11"
+CERT_CN='tpmdemo.example.com'
+CSR="${BASE}/${CERT_CN}.csr"
 
-PKCS11_TOOL='pkcs11-tool --module /usr/lib/pkcs11/libtpm2_pkcs11.so'
-export OPENSSL_CONF="$(dirname $0)/openssl.cnf"
+CSR_EXTENSIONS=req_server
 
-
+export TPM2_PKCS11_STORE="/etc/tpm2-pkcs11"
 mkdir -pv "$TPM2_PKCS11_STORE"

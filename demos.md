@@ -12,9 +12,42 @@ $ ls -1 /usr/bin/tpm2* | wc -l
 Whoa 🤯
 
 
+### Chip abfragen
+
+```text
+tpm2_getcap -l
+tpm2_getcap properties-fixed
+```
+
+
+### EventLog lesen
+
+```text
+tpm2_eventlog \
+  /sys/kernel/security/tpm0/binary_bios_measurements
+```
+
+
 ### Zufallsfahl generieren
 
-`tpm2_getrandom --hex 16`
+```text
+tpm2_getrandom --hex 16
+```
+
+
+### TPM Reset
+
+```text
+# echo 5 > /sys/class/tpm/tpm0/ppi/request
+```
+
+
+### Hash erzeugen
+
+```text
+echo Hello World | tpm2_hash --hash-algorithm=sha256 --hex; echo
+d2a84f4b8b650937ec8f73cd8be2c74add5a911ba64df27458ed8229da804a26
+```
 
 
 
@@ -55,7 +88,7 @@ Hello World
 ```
 
 
-### TLS Server Cert in Apache
+### OpenSSL CA
 
 Demo Time! 🙌
 
@@ -71,8 +104,46 @@ Demo Time! 🙌
 
 ### TLS Clientauth via PKCS#11 in Firefox🦊
 
-Demo Time! 🙌
+Demo Time? 🚧
 
 
 
-### systemd 248 - systemd-cryptenroll
+### systemd-cryptenroll
+
+* Ab systemd 248
+* Automatischer Unlock von LUKS via TPM und mehr
+
+
+### Enrollment
+
+```text
+# systemd-cryptenroll --tpm2-device=auto \
+    --tpm2-pcrs=7 /dev/vda3
+🔐 Please enter current passphrase for disk /dev/vda3: *****
+New TPM2 token enrolled as key slot 1.
+# cryptsetup luksDump /dev/vda3
+[...]
+Tokens:
+  0: systemd-tpm2
+	Keyslot:    1
+[...]
+```
+
+
+### Config
+
+```text
+# cat /etc/crypttab
+rootfs UUID=096ebd1d-foobar... - discard,tpm2-device=auto
+```
+
+
+### Dracut
+
+```text
+# cat <<EOF >/etc/dracut.conf.d/cryptenroll.conf
+install_optional_items+=" /usr/lib64/libtss2* "
+EOF
+# dracut -f
+# reboot
+```
